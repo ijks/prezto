@@ -32,7 +32,12 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'syntax-highlighting' \
+  'prompt' \
+  'history-substring-search' \
+  'command-not-found' \
+  'git' \
+  'python'
 
 #
 # Editor
@@ -85,7 +90,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'ijks'
 
 #
 # Ruby
@@ -125,10 +130,23 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'unknown-token' 'bg=9,fg=bold' \
+  'function' 'bg=105' \
+  'builtin' 'fg=42' \
+  'precommand' 'fg=42,bold' \
+  'alias' 'fg=105' \
+  'command' 'fg=105' \
+  'hashed-command' 'fg=105' \
+  'path' 'fg=202' \
+  'path_prefix' 'fg=8' \
+  'path_approx' 'fg=202' \
+  'globbing' 'fg=161' \
+  'double-quoted-argument' 'fg=155' \
+  'single-quoted-argument' 'fg=155' \
+  'dollar-double-quoted-argument' 'fg=161' \
+  'back-double-quoted-argument' 'fg=161'
+
 
 #
 # Terminal
