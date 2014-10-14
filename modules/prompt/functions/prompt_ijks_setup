@@ -1,0 +1,61 @@
+# ZSH_THEME_GIT_PROMPT_ADDED="%F{green} ✚"
+# ZSH_THEME_GIT_PROMPT_MODIFIED="%F{blue} ✹"
+# ZSH_THEME_GIT_PROMPT_DELETED="%F{red} ✖"
+# ZSH_THEME_GIT_PROMPT_RENAMED="%F{magenta} ➜"
+# ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow} ═"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{cyan} ∅"
+
+function prompt_ijks_premcd {
+    git-info
+}
+
+function prompt_ijks_setup {
+    _newline=$'\n'
+    _lineup=$'\e[1A'
+    _linedown=$'\e[1B'
+
+    setopt LOCAL_OPTIONS
+    unsetopt XTRACE KSH_ARRAYS
+    prompt_opts=(cr percent subst)
+
+    autoload -Uz add-zsh-hook
+
+    add-zsh-hook precmd prompt_ijks_premcd
+
+    # git formatting
+    zstyle ':prezto:module:git:info' verbose 'yes'
+    #prompt
+    zstyle ':prezto:module:git:info:branch' format '%F{161}«%b»%f'
+    zstyle ':prezto:module:git:info:dirty' format '%B%F{9}ᵟ%f%b'
+    zstyle ':prezto:module:git:info:clean' format '%B%F{green}ᵞ%f%b'
+    # rprompt
+    zstyle ':prezto:module:git:info:added' format ' %%B%F{green}✚%f%%b'
+    zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}⬆%f%%b'
+    zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}⬇%f%%b'
+    zstyle ':prezto:module:git:info:deleted' format ' %%B%F{red}✖%f%%b'
+    zstyle ':prezto:module:git:info:modified' format ' %%B%F{blue}✱%f%%b'
+    zstyle ':prezto:module:git:info:renamed' format ' %%B%F{magenta}➜%f%%b'
+    zstyle ':prezto:module:git:info:stashed' format ' %%B%F{green}✧%f%%b'
+    zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
+    zstyle ':prezto:module:git:info:untracked' format ' %%B%F{cyan}∅%f%%b'
+
+    zstyle ':prezto:module:git:info:keys' format \
+        'prompt' '%b%D%C' \
+        'rprompt' '%A%B%S%a%d%m%r%U%u' # Ahead, behind, stashed, added, deleted, modified, renamed, unmerged, untracked
+
+    user_format='%F{105}%n%f'
+    host_format='%F{155}%m%f'
+    host_and_user='[%B$user_format@$host_format%b]: '
+    dir_format='%F{202}%~%f'
+    cmd_prefix='%(!.#.%B⇁%b) '
+
+    PROMPT='${(e)host_and_user}${dir_format} ${(e)git_info[prompt]}
+${cmd_prefix}'
+
+    return_code="%(?..%K{9}%? ⤶ %k)"
+    time_format='%F{42}[%*]%f'
+
+    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]} ${time_format}%{${_linedown}%}'
+}
+
+prompt_ijks_setup "$@"
