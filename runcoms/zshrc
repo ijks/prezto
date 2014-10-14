@@ -12,13 +12,15 @@ fi
 
 # Customize to your needs...
 
+export BROWSER=google-chrome
+
 # MOAR COLOURS
 export TERM=xterm-256color
 
 # Autocorrect is annoying...
 unsetopt CORRECT
 
-# random aliases (alii? alia? Hold on, 'alias' is already plural...)
+# assorted aliases
 alias py=python3
 alias st='subl -a'
 alias stf='subl -a .'
