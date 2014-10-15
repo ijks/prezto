@@ -9,6 +9,23 @@ function prompt_ijks_premcd {
     git-info
 }
 
+# From: https://gist.github.com/gurgeh/3800072
+function _get_RAM {
+  free -m | awk '{if (NR==3) print $4}' | xargs -i echo 'scale=1;{}/1000' | bc
+}
+
+function _get_nr_jobs() {
+  jobs | wc -l
+}
+
+function _get_nr_CPUs() {
+  grep -c "^processor" /proc/cpuinfo
+}
+
+function _get_load() {
+  uptime | grep -ohe 'load average[s:][: ].*' | awk '{ print $3 }' | sed 's/.$//' | tr ',' '.'
+}
+
 function prompt_ijks_setup {
     _newline=$'\n'
     _lineup=$'\e[1A'
