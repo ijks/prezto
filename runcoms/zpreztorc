@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'history-substring-search' \
   'command-not-found' \
+  'resudo' \
   'git' \
   'python'
 
