@@ -27,7 +27,7 @@ function _get_load() {
 }
 
 function sysinfo {
-  echo "$(_get_load)/$(_get_nr_CPUs)"
+  echo "$(_get_load) ($(_get_nr_CPUs))"
 }
 
 function prompt_ijks_setup {
@@ -76,7 +76,7 @@ ${cmd_prefix}'
     return_code="%(?..%K{9}%? ⤶ %k)"
     time_format='%F{42}[%*]%f'
 
-    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]} $(sysinfo) ${time_format}%{${_linedown}%}'
+    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]} ${time_format}%{${_linedown}%}'
 }
 
 prompt_ijks_setup "$@"
