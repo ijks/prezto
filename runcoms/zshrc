@@ -12,11 +12,6 @@ fi
 
 # Customize to your needs...
 
-export BROWSER=google-chrome
-
-# MOAR COLOURS
-export TERM=xterm-256color
-
 # Autocorrect is annoying...
 unsetopt CORRECT
 
