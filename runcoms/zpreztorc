@@ -133,7 +133,7 @@ zstyle ':prezto:module:prompt' theme 'ijks'
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
   'unknown-token' 'bg=9,fg=bold' \
-  'function' 'bg=105' \
+  'function' 'fg=105,underline' \
   'builtin' 'fg=42' \
   'precommand' 'fg=42,bold' \
   'alias' 'fg=105' \
