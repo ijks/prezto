@@ -18,8 +18,12 @@ unsetopt CORRECT
 # assorted aliases
 alias py=python3
 alias st='subl -a'
-alias stf='subl -a .'
+alias stf='subl -n .'
+alias stn='subl -n'
 alias startmc='~/mcserv/Direwolf20/ServerStart.sh'
+alias wo=workon
+alias de=deactivate
+alias gst='git status'
 
 # rbenv stuff
 export PATH="$HOME/.rbenv/bin:$PATH"
