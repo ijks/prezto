@@ -18,6 +18,7 @@ unsetopt CORRECT
 # assorted aliases
 alias py=python3
 alias ipy=ipython
+alias bpy==bpython
 alias st='subl -a'
 alias stf='subl -n .'
 alias stn='subl -n'
