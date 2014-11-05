@@ -20,3 +20,7 @@ export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
+
+# android
+export PATH=$PATH:/home/ijks/code/android/android-studio/bin
+export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/tools
