@@ -24,3 +24,4 @@ export PROJECT_HOME="$HOME/code"
 # android
 export PATH=$PATH:/home/ijks/code/android/android-studio/bin
 export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/tools
+export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/platform-tools
