@@ -47,8 +47,8 @@ function prompt_ijks_setup {
     # git formatting
     zstyle ':prezto:module:git:info' verbose 'yes'
     #prompt
-    zstyle ':prezto:module:git:info:branch' format '%F{161}«%b»%f'
-    zstyle ':prezto:module:git:info:dirty' format '%B%F{9}ᵟ%f%b'
+    zstyle ':prezto:module:git:info:branch' format 'on %F{magenta}%b%f'
+    zstyle ':prezto:module:git:info:dirty' format '%B%F{red}ᵟ%f%b'
     zstyle ':prezto:module:git:info:clean' format '%B%F{green}ᵞ%f%b'
     # rprompt
     zstyle ':prezto:module:git:info:added' format ' %%B%F{green}✚%f%%b'
@@ -67,23 +67,23 @@ function prompt_ijks_setup {
 
     # virtualenvwrapper
     # %v - virtualenv name.
-    zstyle ':prezto:module:python:info:virtualenv' format '%F{39}⟨%v⟩%f'
+    zstyle ':prezto:module:python:info:virtualenv' format ' %B%F{cyan}⟨%v⟩%f%b'
 
-    user_format='%F{105}%n%f'
-    host_format='%F{155}%m%f'
-    host_and_user='[%B$user_format@$host_format%b]: '
-    dir_format='%F{202}%~%f'
+    user_format='%F{blue}%n%f'
+    host_format='%F{green}%m%f'
+    host_and_user='$user_format at $host_format'
+    dir_format='%F{yellow}%2~%f'
     cmd_prefix='%(!.#.%B⇁%b) '
 
     # e - recursively expand variable
     # k - ignore empty array entries
-    PROMPT='${(e)host_and_user}${dir_format} ${(e)git_info[prompt]} ${(e)python_info[virtualenv]}
+    PROMPT='%B${(e)host_and_user} in ${dir_format} ${(e)git_info[prompt]}${(e)python_info[virtualenv]}%b
 ${cmd_prefix}'
 
-    return_code="%(?..%K{9}%? ⤶ %k)"
-    time_format='%F{42}[%*]%f'
+    return_code="%(?..%K{red}%? ⤶ %k)"
+    time_format='it is %F{green}%T%f'
 
-    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]} ${time_format}%{${_linedown}%}'
+    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]}  ${time_format}%{${_linedown}%}'
 }
 
 prompt_ijks_setup "$@"
