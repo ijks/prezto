@@ -132,21 +132,21 @@ zstyle ':prezto:module:prompt' theme 'ijks'
 #
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'unknown-token' 'bg=9,fg=bold' \
-  'function' 'fg=105,underline' \
-  'builtin' 'fg=42' \
-  'precommand' 'fg=42,bold' \
-  'alias' 'fg=105' \
-  'command' 'fg=105' \
-  'hashed-command' 'fg=105' \
-  'path' 'fg=202' \
-  'path_prefix' 'fg=8' \
-  'path_approx' 'fg=202' \
-  'globbing' 'fg=161' \
-  'double-quoted-argument' 'fg=155' \
-  'single-quoted-argument' 'fg=155' \
-  'dollar-double-quoted-argument' 'fg=161' \
-  'back-double-quoted-argument' 'fg=161'
+  'unknown-token' 'bg=red,fg=bold' \
+  'function' 'fg=blue,underline' \
+  'builtin' 'fg=green' \
+  'precommand' 'fg=green,bold' \
+  'alias' 'fg=cyan' \
+  'command' 'fg=blue' \
+  'hashed-command' 'fg=blue' \
+  'path' 'fg=yellow' \
+  'path_prefix' 'fg=grey' \
+  'path_approx' 'fg=yellow' \
+  'globbing' 'fg=magenta' \
+  'double-quoted-argument' 'fg=cyan' \
+  'single-quoted-argument' 'fg=cyan' \
+  'dollar-double-quoted-argument' 'fg=magenta' \
+  'back-double-quoted-argument' 'fg=magenta'
 
 
 #
