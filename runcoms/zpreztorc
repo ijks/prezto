@@ -132,15 +132,15 @@ zstyle ':prezto:module:prompt' theme 'ijks'
 #
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'unknown-token' 'bg=red,fg=bold' \
+  'unknown-token' 'bg=red,fg=white,bold' \
   'function' 'fg=blue,underline' \
-  'builtin' 'fg=green' \
-  'precommand' 'fg=green,bold' \
+  'builtin' 'fg=red' \
+  'precommand' 'fg=red,bold' \
   'alias' 'fg=cyan' \
   'command' 'fg=blue' \
   'hashed-command' 'fg=blue' \
-  'path' 'fg=yellow' \
-  'path_prefix' 'fg=grey' \
+  'path' 'fg=green' \
+  'path_prefix' 'fg=yellow' \
   'path_approx' 'fg=yellow' \
   'globbing' 'fg=magenta' \
   'double-quoted-argument' 'fg=cyan' \
