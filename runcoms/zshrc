@@ -12,6 +12,9 @@ fi
 
 # Customize to your needs...
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # Autocorrect is annoying...
 unsetopt CORRECT
 
