@@ -18,14 +18,20 @@ fi
 # Autocorrect is annoying...
 unsetopt CORRECT
 
+# git + hub = github
+# https://github.com/github/hub
+alias git=hub
+
+# package managers
+alias ag='sudo apt-get'
+alias pm='sudo pacman'
+
 # assorted aliases
 alias py=python3
 alias ipy=ipython
-alias bpy==bpython
+alias bpy=bpython
 alias st='subl -a'
 alias stf='subl -n .'
 alias stn='subl -n'
-alias startmc='~/mcserv/Direwolf20/ServerStart.sh'
-alias wo=workon
-alias de=deactivate
+alias wo='pew workon'
 alias gst='git status'
