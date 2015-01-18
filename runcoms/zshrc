@@ -20,7 +20,8 @@ unsetopt CORRECT
 
 # git + hub = github
 # https://github.com/github/hub
-alias git=hub
+# alias git=hub
+# disabled because it breaks zsh autocompletion
 
 # package managers
 alias ag='sudo apt-get'
