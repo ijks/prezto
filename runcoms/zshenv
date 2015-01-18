@@ -25,3 +25,10 @@ export PROJECT_HOME="$HOME/code"
 export PATH=$PATH:/home/ijks/code/android/android-studio/bin
 export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/tools
 export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/platform-tools
+
+# cabal
+export PATH=$PATH:/home/ijks/.cabal/bin
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
