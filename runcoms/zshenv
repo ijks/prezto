@@ -10,6 +10,13 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# Use Sublime Text when installed, else vim
+if (( $+commands[subl] )) ; then
+    export EDITOR=subl
+else
+    export EDITOR=vim
+fi
+
 export BROWSER=google-chrome
 
 # MOAR COLOURS
