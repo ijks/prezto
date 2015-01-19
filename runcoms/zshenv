@@ -20,7 +20,7 @@ fi
 export BROWSER=google-chrome
 
 # MOAR COLOURS
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
