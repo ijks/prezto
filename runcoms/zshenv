@@ -18,9 +18,10 @@ else
 fi
 
 export BROWSER=google-chrome
+export VISUAL=subl
 
-# MOAR COLOURS
-#export TERM=xterm-256color
+# Prioritize executables from /usr/local/bin
+export PATH=$PATH:/usr/local/bin
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
@@ -33,9 +34,11 @@ export PATH=$PATH:/home/ijks/code/android/android-studio/bin
 export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/tools
 export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/platform-tools
 
-# cabal
+# Haskell
 export PATH=$PATH:/home/ijks/.cabal/bin
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
 
+# Rust
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
