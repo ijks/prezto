@@ -48,3 +48,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Rust
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+# Processing
+export PATH=$PATH:/home/ijks/code/processing

@@ -12,6 +12,10 @@ fi
 
 # Customize to your needs...
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -22,6 +26,9 @@ unsetopt CORRECT
 # https://github.com/github/hub
 # alias git=hub
 # disabled because it breaks zsh autocompletion
+
+# helper functions
+mkd() {mkdir $1; cd $1}
 
 # package managers
 alias ag='sudo apt-get'
