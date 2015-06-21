@@ -16,15 +16,10 @@ then
     export TERM=xterm-256color
 fi
 
-# Use Sublime Text when installed, else vim
-if (( $+commands[subl] )) ; then
-    export EDITOR=subl
-else
-    export EDITOR=vim
-fi
+export EDITOR=vim
+export VISUAL=vim
 
 export BROWSER=google-chrome
-export VISUAL=subl
 
 # Prioritize executables from /usr/local/bin
 export PATH=$PATH:/usr/local/bin
