@@ -40,11 +40,9 @@ alias ag='sudo apt-get'
 alias pm='sudo pacman'
 
 # assorted aliases
+alias la='ls -A'
 alias py=python3
 alias ipy=ipython
 alias bpy=bpython
-alias st='subl -a'
-alias stf='subl -n .'
-alias stn='subl -n'
 alias wo='pew workon'
 alias gst='git status'
