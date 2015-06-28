@@ -44,6 +44,7 @@ function cless {
 # package managers
 alias ag='sudo apt-get'
 alias pm='sudo pacman'
+alias ya='yaourt'
 
 # assorted aliases
 alias la='ls -A'
