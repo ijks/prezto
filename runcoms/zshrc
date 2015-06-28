@@ -33,7 +33,13 @@ unsetopt CORRECT
 # disabled because it breaks zsh autocompletion
 
 # helper functions
-mkd() {mkdir $1; cd $1}
+function mkd {
+  mkdir $1; cd $1
+}
+
+function cless {
+  pygmentize $1 | less -R
+}
 
 # package managers
 alias ag='sudo apt-get'
