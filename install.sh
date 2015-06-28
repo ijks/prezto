@@ -2,7 +2,8 @@
 
 setopt EXTENDED_GLOB
 for rcfile in runcoms/^README.md(.N); do
-    full_path=$(readlink -e "$rcfile")
-    ln -s "$full_path" "../.${rcfile:t}"
+  ln -s "$(pwd)/$rcfile" "$(dirname $(pwd))/.${rcfile:t}"
+  # Use the dirname of the working directory instead of a relative path
+  # Otherwise, the link won't be placed properly if the current directory is a symlink
 done
 unsetopt EXTENDED_GLOB
