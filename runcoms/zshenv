@@ -32,12 +32,12 @@ export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
 
 # android
-export PATH=$PATH:/home/ijks/code/android/android-studio/bin
-export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/tools
-export PATH=$PATH:/home/ijks/code/android/android-sdk-linux/platform-tools
+export PATH=$PATH:$HOME/android-studio/bin
+export PATH=$PATH:$HOME/android-sdk-linux/tools
+export PATH=$PATH:$HOME/android-sdk-linux/platform-tools
 
 # Haskell
-export PATH=$PATH:/home/ijks/.cabal/bin
+export PATH=$PATH:$HOME/.cabal/bin
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
