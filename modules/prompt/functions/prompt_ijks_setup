@@ -8,6 +8,12 @@
 function prompt_ijks_premcd {
     git-info
     python-info
+
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        IS_SSH=true
+    else
+        IS_SSH=false
+    fi
 }
 
 # From: https://gist.github.com/gurgeh/3800072
@@ -48,18 +54,18 @@ function prompt_ijks_setup {
     zstyle ':prezto:module:git:info' verbose 'yes'
     #prompt
     zstyle ':prezto:module:git:info:branch' format '%F{white}on %F{magenta}%b%f'
-    zstyle ':prezto:module:git:info:dirty' format '%B%F{red}ᵟ%f%b'
-    zstyle ':prezto:module:git:info:clean' format '%B%F{green}ᵞ%f%b'
+    zstyle ':prezto:module:git:info:dirty' format '%B%F{red} %f%b'
+    zstyle ':prezto:module:git:info:clean' format '%B%F{green} %f%b'
     # rprompt
-    zstyle ':prezto:module:git:info:added' format ' %%B%F{green}✚%f%%b'
-    zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}⬆%f%%b'
-    zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}⬇%f%%b'
-    zstyle ':prezto:module:git:info:deleted' format ' %%B%F{red}✖%f%%b'
-    zstyle ':prezto:module:git:info:modified' format ' %%B%F{blue}✱%f%%b'
-    zstyle ':prezto:module:git:info:renamed' format ' %%B%F{magenta}➜%f%%b'
-    zstyle ':prezto:module:git:info:stashed' format ' %%B%F{green}✧%f%%b'
-    zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
-    zstyle ':prezto:module:git:info:untracked' format ' %%B%F{cyan}∅%f%%b'
+    zstyle ':prezto:module:git:info:added' format ' %%B%F{green}%f%%b'
+    zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}%f%%b'
+    zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}%f%%b'
+    zstyle ':prezto:module:git:info:deleted' format ' %%B%F{red}%f%%b'
+    zstyle ':prezto:module:git:info:modified' format ' %%B%F{blue}%f%%b'
+    zstyle ':prezto:module:git:info:renamed' format ' %%B%F{magenta}%f%%b'
+    zstyle ':prezto:module:git:info:stashed' format ' %%B%F{green}%f%%b'
+    zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}%f%%b'
+    zstyle ':prezto:module:git:info:untracked' format ' %%B%F{cyan}%f%%b'
 
     zstyle ':prezto:module:git:info:keys' format \
         'prompt' '%b%D%C' \
@@ -71,19 +77,22 @@ function prompt_ijks_setup {
 
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
-    host_and_user='$user_format %F{white}at%f $host_format'
-    dir_format='%F{green}%2~%f'
-    cmd_prefix='%(!.#.%B⇁%b) '
+    host_and_user='$user_format'
+    if [ $IS_SSH ]; then
+        host_and_user='$user_format %F{white}on $host_format'
+    fi
+    dir_format='%F{green}%3~%f'
+    cmd_prefix='%(!.#.%B¶%b) '
 
     # e - recursively expand variable
     # k - ignore empty array entries
     PROMPT='%B${(e)host_and_user} %F{white}in%f ${dir_format} ${(e)git_info[prompt]}${(e)python_info[virtualenv]}%b
 ${cmd_prefix}'
 
-    return_code="%(?..%K{red}%? ⤶ %k)"
+    return_code="%(?..%K{red}%?  %k)"
     time_format='it is %F{yellow}%T%f'
 
-    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]}  ${time_format}%{${_linedown}%}'
+    RPROMPT='%{${_lineup}%}${return_code}${(e)git_info[rprompt]} %{${_linedown}%}'
 }
 
 prompt_ijks_setup "$@"
