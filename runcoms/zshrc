@@ -14,19 +14,18 @@ fi
 eval $(dircolors ~/.dircolors)
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-recolour(){source $BASE16_SHELL}
+BASE16_THEME=flat
+BASE16_PATH="$HOME/.config/base16-shell/base16-$BASE16_THEME.dark.sh"
+[[ -s $BASE16_PATH ]] && source $BASE16_PATH
 
-# RVM
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+function color {
+  source "$HOME/.config/base16-shell/base16-$BASE16_THEME.dark.sh"
+}
 
-# chruby
-#source /usr/local/share/chruby/chruby.sh
-#source /usr/local/share/chruby/auto.sh
-
-# Autocorrect is annoying...
-unsetopt CORRECT
+function colorscheme {
+  BASE16_THEME="$1"
+  source_base16
+}
 
 # git + hub = github
 # https://github.com/github/hub
