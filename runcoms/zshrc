@@ -53,6 +53,8 @@ alias ya='yaourt'
 
 # assorted #
 alias la='ls -A'
+alias lg='ls -A | grep -i'
+
 alias py=python3
 alias ipy=ipython
 alias bpy=bpython
