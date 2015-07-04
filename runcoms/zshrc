@@ -55,6 +55,11 @@ alias ya='yaourt'
 alias la='ls -A'
 alias lg='ls -A | grep -i'
 
+alias sz='source ~/.zshrc'
+alias se='source ~/.zshenv'
+alias ez='$EDITOR ~/.zshrc' # ez pz
+alias ee='$EDITOR ~/.zshenv'
+
 alias py=python3
 alias ipy=ipython
 alias bpy=bpython
