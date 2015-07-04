@@ -1,16 +1,15 @@
 #
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   gimme dem shell customization
+#   loosely organized by: init stuff, options, helper functions, aliases
+#   see also: ~/.zpreztorc
 #
 
+## init stuff ##
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
@@ -32,7 +31,11 @@ unsetopt CORRECT
 # alias git=hub
 # disabled because it breaks zsh autocompletion
 
-# helper functions
+## options ##
+# Autocorrect is annoying...
+unsetopt CORRECT
+
+## helper functions ##
 function mkd {
   mkdir $1; cd $1
 }
@@ -41,12 +44,13 @@ function cless {
   pygmentize $1 | less -R
 }
 
-# package managers
+## aliases ##
+# package managers #
 alias ag='sudo apt-get'
 alias pm='sudo pacman'
 alias ya='yaourt'
 
-# assorted aliases
+# assorted #
 alias la='ls -A'
 alias py=python3
 alias ipy=ipython

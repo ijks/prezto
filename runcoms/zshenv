@@ -1,8 +1,6 @@
 #
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   environment variables
+#   loosely organized by: srry jk it's not organized
 #
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
