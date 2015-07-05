@@ -38,7 +38,8 @@ zstyle ':prezto:load' pmodule \
   'command-not-found' \
   'resudo' \
   'git' \
-  'python'
+  'python' \
+  'archive'
 
 #
 # Editor
