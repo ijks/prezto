@@ -3,9 +3,9 @@ function prompt_ijks_premcd {
     python-info
 
     if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-        IS_SSH=true
+        IS_SSH="true"
     else
-        IS_SSH=false
+        IS_SSH="false"
     fi
 }
 
@@ -49,10 +49,9 @@ function prompt_ijks_setup {
 
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
-    host_and_user='$user_format'
-    if [[ ($IS_SSH) ]]; then
-        host_and_user='$user_format %F{white}on $host_format'
-    fi
+    #host_and_user='$user_format'
+    host_and_user='$user_format' && [[ $IS_SSH -eq "true" ]] && host_and_user='$user_format %F{white}on $host_format'
+
     dir_format='%F{green}%3~%f'
     cmd_prefix='%(!.#.%B¶%b) '
 
