@@ -50,7 +50,7 @@ function prompt_ijks_setup {
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
     host_and_user='$user_format'
-    if [[ $IS_SSH ]]; then
+    if [[ ($IS_SSH) ]]; then
         host_and_user='$user_format %F{white}on $host_format'
     fi
     dir_format='%F{green}%3~%f'
