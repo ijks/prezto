@@ -17,7 +17,7 @@ fi
 export EDITOR=vim
 export VISUAL=vim
 
-export BROWSER=google-chrome
+export BROWSER=google-chrome-beta
 
 # Prioritize executables from /usr/local/bin
 export PATH=$PATH:/usr/local/bin
