@@ -59,6 +59,7 @@ alias sz='source ~/.zshrc'
 alias se='source ~/.zshenv'
 alias ez='$EDITOR ~/.zshrc' # ez pz
 alias ee='$EDITOR ~/.zshenv'
+alias ep='$EDITOR ~/.zprezto/modules/prompt/functions/prompt_ijks_setup'
 
 alias py=python3
 alias ipy=ipython
