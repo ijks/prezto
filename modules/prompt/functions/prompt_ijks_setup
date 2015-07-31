@@ -50,14 +50,14 @@ function prompt_ijks_setup {
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
     #host_and_user='$user_format'
-    host_and_user='$user_format' && [[ $IS_SSH -eq "true" ]] && host_and_user='$user_format %F{white}on $host_format'
+    host_and_user='$user_format' && [[ $IS_SSH ]] && host_and_user='$user_format %F{white}on $host_format'
 
     dir_format='%F{green}%3~%f'
     cmd_prefix='%(!.#.%B¶%b) '
 
     # e - recursively expand variable
     # k - ignore empty array entries
-    PROMPT='%B${(e)host_and_user} %F{white}in%f ${dir_format} ${(e)git_info[prompt]}${(e)python_info[virtualenv]}%b
+    PROMPT='%B${(e)host_and_user} %F{white}in%f ${dir_format} ${(e)git_info[prompt]} ${(e)python_info[virtualenv]}%b
 ${cmd_prefix}'
 
     return_code="%(?..%K{red}%?  %k)"
