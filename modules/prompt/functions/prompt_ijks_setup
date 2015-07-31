@@ -45,7 +45,7 @@ function prompt_ijks_setup {
 
     # virtualenvwrapper
     # %v - virtualenv name.
-    zstyle ':prezto:module:python:info:virtualenv' format ' %B%F{cyan}⟨%v⟩%f%b'
+    zstyle ':prezto:module:python:info:virtualenv' format ' %B%F{cyan} %v%f%b'
 
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
