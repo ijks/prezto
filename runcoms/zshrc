@@ -66,3 +66,8 @@ alias ipy=ipython
 alias bpy=bpython
 alias wo='pew workon'
 alias gst='git status'
+
+## fortune ##
+# gimme dem stegosaurus
+alias stegosaurus='fortune -s | cowsay -f stegosaurus -W 70 | lolcat'
+stegosaurus
