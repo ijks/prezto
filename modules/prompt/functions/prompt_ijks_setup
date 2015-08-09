@@ -50,7 +50,7 @@ function prompt_ijks_setup {
     user_format='%F{blue}%n%f'
     host_format='%F{red}%m%f'
     #host_and_user='$user_format'
-    host_and_user='$user_format' && [[ $IS_SSH -eq "true" ]] && host_and_user='$user_format %F{white}on $host_format'
+    host_and_user='$user_format' && [[ $IS_SSH = "true" ]] && host_and_user='$user_format %F{white}on $host_format'
 
     dir_format='%F{green}%3~%f'
     cmd_prefix='%(!.#.%B¶%b) '
