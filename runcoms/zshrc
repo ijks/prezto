@@ -24,7 +24,7 @@ function color {
 
 function colorscheme {
   BASE16_THEME="$1"
-  source_base16
+  color
 }
 
 # git + hub = github
