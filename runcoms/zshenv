@@ -41,6 +41,8 @@ export PATH=$PATH:$HOME/.cabal/bin
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/build/go
+export PATH=$PATH:$GOPATH/bin
 
 # Rust
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
