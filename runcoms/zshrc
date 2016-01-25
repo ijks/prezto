@@ -75,5 +75,14 @@ alias wp='feh --bg-fill'
 
 ## fortune ##
 # gimme dem stegosaurus
-alias stegosaurus='fortune -s | cowsay -f stegosaurus -W 70 | lolcat'
-stegosaurus
+local _can_do_the_dinosaur="true"
+for cmd in fortune cowsay lolcat ; do
+  if (( ! $+commands[$cmd] )) ; then
+    _can_do_the_dinosaur="false"
+  fi
+done
+
+if [[ $_can_do_the_dinosaur == "true" ]] ; then
+  alias stegosaurus='fortune -s | cowsay -f stegosaurus -W 70 | lolcat'
+  stegosaurus
+fi
