@@ -11,7 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # load dircolors manually (some terminals need this)
-eval $(dircolors ~/.dircolors)
+[[ -s ~/.dircolors ]] && eval $(dircolors ~/.dircolors)
 
 # Base16 Shell
 BASE16_THEME=flat
