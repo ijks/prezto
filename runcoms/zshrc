@@ -45,7 +45,7 @@ function cless {
   pygmentize $1 | less -R
 }
 
-function gi {
+function gitignore {
     curl -L -s "https://www.gitignore.io/api/$@";
 }
 
