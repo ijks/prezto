@@ -46,6 +46,10 @@ export PATH=$PATH:$GOPATH/bin
 
 # Rust
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+## Multirust
+export PATH=$PATH:$HOME/.multirust/toolchains/nightly/cargo/bin
+## Racer
+export RUST_SRC_PATH=$HOME/code/external/rust
 
 # Processing
 export PATH=$PATH:$HOME/code/processing
