@@ -53,7 +53,7 @@ function gitignore {
 # package managers #
 alias ag='sudo apt-get'
 alias pm='sudo pacman'
-alias ya='yaourt'
+alias au='sudo aura'
 
 # assorted #
 alias la='ls -A'
